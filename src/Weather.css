@@ -89,7 +89,6 @@
 .Weather .current-weather-description {
   position: relative;
   margin-left: 10px;
-  text-transform: capitalize;
 }
 
 .Weather .current-weather-stats {
