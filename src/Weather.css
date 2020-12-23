@@ -1,4 +1,133 @@
 .Weather {
-  border: 1px solid grey;
-  background-color: lightblue;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #dfe1e5;
+  background: rgb(9, 9, 121);
+  background: linear-gradient(
+    0deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 255, 247, 1) 100%
+  );
+}
+@media screen and (min-width: 1140px) {
+  .Weather {
+    max-width: 800px;
+    font-size: 20px;
+  }
+}
+
+.Weather .location-and-date {
+  width: 100%;
+  font-size: 14px;
+}
+
+.Weather #current-location {
+  font-size: 10px;
+  margin: 8px 0;
+}
+.Weather #current-location a {
+  font-size: 10px;
+  margin-bottom: 0;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.Weather .current-weather {
+  display: flex;
+  width: 100%;
+}
+
+.Weather .current-weather-icon-container {
+  flex-grow: 1.25;
+  text-align: center;
+}
+
+.Weather .current-weather-content-container {
+  flex-grow: 1;
+}
+
+.Weather #current-weather-icon {
+  margin-right: 15px;
+  width: 150px;
+}
+
+.Weather .current-temperature {
+  font-weight: 300;
+  font-size: 56px;
+}
+
+.Weather .current-temperature .units {
+  position: relative;
+  font-size: 20px;
+  top: -32px;
+}
+
+.Weather .current-temperature .active {
+  color: #fff;
+  cursor: default;
+}
+
+.Weather .current-temperature .inactive {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+.Weather .current-temperature .active:hover {
+  text-decoration: none;
+}
+
+.Weather .current-weather-description {
+  position: relative;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+
+.Weather .current-weather-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 20px 0;
+}
+@media screen and (min-width: 700px) {
+  .Weather .current-weather-stats {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    padding-left: 20px;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .Weather .current-weather,
+  .Weather .current-weather-stats {
+    width: 50%;
+  }
+}
+
+.Weather .current-weather-stats .label {
+  margin-top: 10px;
+}
+.Weather .current-weather-stats .image {
+  padding: 20px 0;
+}
+
+.Weather .current-weather-stats .value {
+  margin-bottom: 10px;
+}
+
+.Weather .search-form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.Weather .submit-button {
+  padding: 0;
 }
