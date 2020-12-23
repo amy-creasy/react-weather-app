@@ -1,10 +1,8 @@
 import React, {useState} from "react";
-import FormattedDate from "./FormattedDate";
-import "./Weather.css";
+import CurrentWeatherData from "./CurrentWeatherData";
 import axios from "axios";
-import cloudIcon from "./cloud icon.png";
-import humidityIcon from "./humidity icon.png";
-import windIcon from "./wind icon.png";
+import "./Weather.css";
+
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false});
@@ -25,67 +23,20 @@ export default function Weather(props) {
     if (weatherData.ready) {
     return (
         <div className ="Weather">
-            <form className ="search-form">
-                <div className = "row">
-                    <div className ="col-9">
-                        <input type ="search" placeholder ="Search for a city..." className="form-control" autoFocus="on"/>
-                        <p id="current-location"><small><a href="#">Current Location</a></small></p>
+                <form className ="search-form">
+                    <div className = "row">
+                        <div className ="col-9">
+                            <input type ="search" placeholder ="Search for a city..." className="form-control" autoFocus="on"/>
+                            <p id="current-location"><small><a href="#">Current Location</a></small></p>
+                        </div>
+                        <div className ="col-3 submit-button">
+                            <input type ="submit" value ="Search" className="btn btn-light"/>
+                        </div>
                     </div>
-                    <div className ="col-3 submit-button">
-                        <input type ="submit" value ="Search" className="btn btn-light"/>
-                    </div>
-                </div>
-            </form>
-            <div className="location-and-date">
-                <h1>{weatherData.city}</h1>
-                <p><em> < FormattedDate date={weatherData.date} /></em></p>
-            </div> 
-            <div className="current-weather">
-                <div className="current-weather-icon-container">
-                    <img src={weatherData.iconUrl} id="current-weather-icon" alt="{weatherData.description}" />
-                 </div>
-                <div className="current-weather-content-container">
-                    <div className="current-temperature"><span id="temperature-value">{Math.round(weatherData.temperature)}</span><span class="units"><a href="#" class="active" id="celsius-link">°C</a> | <a href="#" class="inactive" id="fahrenheit-link">°F</a></span> </div>
-                    <div className="current-weather-description text-capitalize">{weatherData.description}</div>
-                </div>
-            </div>
-            <div className="current-weather-stats">
-                <div className="Cloudiness">
-                    <div className="label">
-                        Clouds
-                    </div>
-                    <div className="image">
-                        <img src={cloudIcon} alt=""/>
-                    </div>
-                    <div className="value" id="cloudiness-value">
-                        {weatherData.clouds}%
-                    </div>
-                </div>
-                <div className="humidity">
-                    <div class="label">
-                        Humidity
-                    </div>
-                    <div className="image">
-                        <img src={humidityIcon} alt=""/>
-                    </div>
-                    <div className="value" id="humidity-value">
-                        {weatherData.humidity}%
-                    </div>
-                </div>
-                <div className="wind">
-                    <div className="label">
-                        Wind
-                    </div>
-                    <div className="image">
-                        <img src={windIcon} alt=""/>
-                    </div>
-                    <div className="value" id="wind-value">
-                        {Math.round(weatherData.wind)}mph
-                    </div>
-                </div>
-            </div>
+                </form>
+                < CurrentWeatherData data={weatherData}/>
         </div>
-    )
+    );
 
     }
     else {
