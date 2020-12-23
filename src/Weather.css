@@ -7,12 +7,17 @@
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #dfe1e5;
-  background: rgb(9, 9, 121);
+  background: #c31432; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #240b36,
+    #c31432
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    0deg,
-    rgba(9, 9, 121, 1) 0%,
-    rgba(0, 255, 247, 1) 100%
-  );
+    to right,
+    #240b36,
+    #c31432
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 @media screen and (min-width: 1140px) {
   .Weather {
