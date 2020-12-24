@@ -59,9 +59,9 @@
   flex-grow: 1;
 }
 
-.Weather #current-weather-icon {
+.Weather canvas {
   margin-right: 15px;
-  width: 150px;
+  margin-top: 15px;
 }
 
 .Weather .current-temperature {

@@ -3,7 +3,7 @@ import FormattedDate from "./FormattedDate";
 import cloudIcon from "./cloud icon.png";
 import humidityIcon from "./humidity icon.png";
 import windIcon from "./wind icon.png";
-
+import WeatherIcon from "./WeatherIcon";
 
 
 export default function CurrentWeatherData (props){
@@ -16,7 +16,7 @@ export default function CurrentWeatherData (props){
             <div className = "weather-data-container">
                 <div className="current-weather">
                     <div className="current-weather-icon-container">
-                        <img src={props.data.iconUrl} id="current-weather-icon" alt="{weatherData.description}" />
+                        <WeatherIcon code={props.data.icon}/>
                     </div>
                     <div className="current-weather-content-container">
                         <div className="current-temperature"><span id="temperature-value">{Math.round(props.data.temperature)}</span><span class="units"><a href="#" class="active" id="celsius-link">°C</a> | <a href="#" class="inactive" id="fahrenheit-link">°F</a></span> </div>
