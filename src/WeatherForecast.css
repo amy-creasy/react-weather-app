@@ -1,7 +1,15 @@
 .WeatherForecast {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
   padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 700px) {
+  .WeatherForecast {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+  }
 }
 
 .WeatherForecast canvas {
