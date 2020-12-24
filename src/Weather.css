@@ -75,18 +75,9 @@
   top: -32px;
 }
 
-.Weather .current-temperature .active {
+.Weather .current-temperature {
   color: #fff;
   cursor: default;
-}
-
-.Weather .current-temperature .inactive {
-  color: #0645ad;
-  text-decoration: underline;
-}
-
-.Weather .current-temperature .active:hover {
-  text-decoration: none;
 }
 
 .Weather .current-weather-description {

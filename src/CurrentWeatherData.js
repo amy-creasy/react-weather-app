@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import TemperatureUnits from "./TemperatureUnits";
 import cloudIcon from "./cloud icon.png";
 import humidityIcon from "./humidity icon.png";
 import windIcon from "./wind icon.png";
@@ -19,7 +20,7 @@ export default function CurrentWeatherData (props){
                         <WeatherIcon code={props.data.icon}/>
                     </div>
                     <div className="current-weather-content-container">
-                        <div className="current-temperature"><span id="temperature-value">{Math.round(props.data.temperature)}</span><span class="units"><a href="#" class="active" id="celsius-link">°C</a> | <a href="#" class="inactive" id="fahrenheit-link">°F</a></span> </div>
+                        <TemperatureUnits celsius={props.data.temperature} />
                         <div className="current-weather-description text-capitalize">{props.data.description}</div>
                     </div>
                 </div>
